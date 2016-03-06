@@ -17,6 +17,8 @@ build: NAME TAG PORT builddocker
 # run a plain container
 run: NAME TAG PORT build rsyslogCID
 
+rsyslog: run
+
 rsyslogCID:
 	$(eval TMP := $(shell mktemp -d --suffix=DOCKERTMP))
 	$(eval NAME := $(shell cat NAME))
